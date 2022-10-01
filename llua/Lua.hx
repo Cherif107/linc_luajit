@@ -577,7 +577,12 @@ class Lua_helper {
 			args[i] = Convert.fromLua(l, i + 1);
 		}
 
-		var ret:Dynamic = Reflect.callMethod(this, cbf, args);
+		if(nparams <= 0){
+			ret = cbf();
+		}else{
+			ret = Reflect.callMethod(this, cbf, args);
+		}
+
 
 		if(ret != null){
 			Convert.toLua(l, ret);
