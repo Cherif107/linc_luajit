@@ -88,7 +88,7 @@ class Convert {
 				ret = toHaxeObj(l, v);
 			case Lua.LUA_TFUNCTION:
 				ret = LuaL.ref(l, Lua.LUA_REGISTRYINDEX);
-				trace("function\n");
+			//	trace("function\n");
 			// case Lua.LUA_TUSERDATA:
 			// 	ret = LuaL.ref(l, Lua.LUA_REGISTRYINDEX);
 			// 	trace("userdata\n");
@@ -101,7 +101,6 @@ class Convert {
 			default:
 				ret = null;
 				trace("return value not supported\n"+v);
-				trace("type name: "+Lua.typename);
 		}
 
 		return ret;
