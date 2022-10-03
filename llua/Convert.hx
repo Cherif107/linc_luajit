@@ -101,6 +101,7 @@ class Convert {
 			default:
 				ret = null;
 				trace("return value not supported\n"+v);
+				trace("type name: "+Lua.typename);
 		}
 
 		return ret;
