@@ -86,8 +86,8 @@ class Convert {
 				ret = Lua.tostring(l, v);
 			case Lua.LUA_TTABLE:
 				ret = toHaxeObj(l, v);
-			// case Lua.LUA_TFUNCTION:
-			// 	ret = LuaL.ref(l, Lua.LUA_REGISTRYINDEX);
+			case Lua.LUA_TFUNCTION:
+				ret = LuaL.ref(l, Lua.LUA_REGISTRYINDEX);
 			// 	trace("function\n");
 			// case Lua.LUA_TUSERDATA:
 			// 	ret = LuaL.ref(l, Lua.LUA_REGISTRYINDEX);
