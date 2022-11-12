@@ -368,6 +368,9 @@ extern class Lua {
 
  	@:native('linc::lua::pushcfunction') //?
 	static function pushcfunction(l:State, f:cpp.Callable<StatePointer->Int>) : Void;
+	
+	static inline function pushfunction(l:State, f:(l:State) -> Int):Void
+		return pushcfunction(l, Callable.fromStaticFunction(f));
 
 	@:native('lua_strlen')
 	static function strlen(l:State, idx:Int) : Int;
