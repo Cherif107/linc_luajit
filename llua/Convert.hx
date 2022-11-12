@@ -28,6 +28,8 @@ class Convert {
 				arrayToLua(l, val);
 			case Type.ValueType.TObject:
 				objectToLua(l, val); // {}
+			case Type.ValueType.TFunction:
+				Lua.pushfunction(l, val); // {}
 			default:
 				trace("haxe value not supported\n"+val+" - "+Type.typeof(val) );
 				return false;
