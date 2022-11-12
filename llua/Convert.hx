@@ -32,7 +32,7 @@ class Convert {
 				Lua.pushfunction(l, val); // {}
 				trace('function');
 			default:
-				trace("haxe value not supported\n"+val+" - "+Type.typeof(val) );
+				trace("ahoy cherif de valoos is no support\n"+val+" - "+Type.typeof(val) );
 				return false;
 		}
 
