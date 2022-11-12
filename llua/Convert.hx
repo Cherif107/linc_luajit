@@ -30,6 +30,7 @@ class Convert {
 				objectToLua(l, val); // {}
 			case Type.ValueType.TFunction:
 				Lua.pushfunction(l, val); // {}
+				trace('function');
 			default:
 				trace("haxe value not supported\n"+val+" - "+Type.typeof(val) );
 				return false;
